@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSU Formula Racing Forums</title>
+    <meta name="description" content="Michigan State University Formula Racing Team Forums">
+    <meta property="og:title" content="MSU Formula Racing Forums">
+    <meta property="og:description" content="Official forums for MSU Formula Racing Team">
+    <meta property="og:image" content="SR_logo_black.png">
+</head>
+<body>
+
+    <link rel="stylesheet" href="index.css">
+
+    <div id="slideshow-container">
+        <img id="slideA" class="slideshow-image" src="" />
+        <img id="slideB" class="slideshow-image" src="" />
+    </div>
+
+
+    <div class="main-menu home-menu">
+
+        <form class="signup-login">
+            <img src="SR_logo_black.png" alt="MSU Formula Racing Logo" class="login-logo">
+
+            <div class="form-fields"> <!-- wrap input fields/buttons -->
+                <label for="email">email:</label>
+                <input class="main-menu-input email-input" type="email" name="email">
+
+                <label for="password">password:</label>
+                <input class="main-menu-input password-input" type="password" name="password">
+
+                <label for="username">username:</label>
+                <input class="main-menu-input username-input" type="text" name="username">
+
+                <div class="remember-wrapper">
+                <input type="checkbox" id="remember" class="remember-me-check" />
+                <label for="remember">remember me</label>
+                </div> 
+
+                <div class="form-buttons">
+                <button type="button" id="signup-button" class="forum-button signup-button">Sign Up</button>
+                <button type="button" id="login-button" class="forum-button login-button">Log In</button>
+                </div>
+            </div>
+
+            <!-- hidden approval message -->
+            <div id="approval-message" class="approval-message" style="display: none;">
+                ⏳ Your account is pending admin approval.
+                <br><br>
+                <button id="back-to-login-button" class="forum-button">Back to Login</button>
+            </div>
+        </form>
+
+
+    </div>
+
+    <!-- Forum Topics Section (shown after login) -->
+    <div id="forum-container" class="forum-container" style="display: none;"></div>
+
+    <canvas id="bg"></canvas>
+
+    <script src="bundle.js"></script>
+</body>
+</html>

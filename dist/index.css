@@ -1,0 +1,407 @@
+.main-menu.home-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* center on screen */
+    width: 300px;
+    padding: 30px;
+    
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.70);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.70);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.700);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10; /* above the canvas */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.signup-login input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* <-- Rounded corners */
+    box-sizing: border-box; /* Prevents border from overflowing input dimensions */
+    font-size: 14px;
+    outline: none;
+}
+
+.signup-login input:focus {
+    border-color: #18453B;
+    box-shadow: 0 0 5px rgba(24, 69, 59, 0.5);
+}
+
+.signup-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.signup-login label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.signup-login input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.control.control-checkbox {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: -5px; /* Pulls it closer to the inputs */
+    margin-bottom: 20px;
+    gap: 8px;
+}
+
+.control-checkbox input {
+    margin-right: 5px;
+    accent-color: #6a1b9a; /* Purple checkbox like in your screenshot */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.remember-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.remember-wrapper input[type="checkbox"] {
+    transform: scale(1.2);
+    accent-color: #18453B;
+    margin: 0;
+}
+
+.remember-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.remember-wrapper label {
+    margin: 0;         /* prevent default label margin */
+    white-space: nowrap;
+}
+
+.login-logo {
+    max-width: 90%;
+    margin-bottom: 2vh;
+    display: block;
+}
+
+#slideshow-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
+
+#slideshow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.slideshow-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.approval-message {
+  color: #aa0000;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#back-to-login-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.forum-container {
+    margin: 50px auto 0 auto;
+    width: 85%;
+    font-family: sans-serif;
+}
+
+.forum-header {
+    background-color: #009688;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 3px solid #00796b;
+    border-radius: 4px 4px 0 0;
+}
+
+.forum-section {
+    margin-top: 2vh;
+    background: rgba(255, 255, 255, 0.70);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 15px 20px;
+}
+
+.forum-section:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    will-change: transform;
+}
+
+.forum-section h2 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #00796b;
+}
+
+.topic-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #444;
+    margin-top: 5px;
+}
+
+.forum-button {
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid #00796b;
+  color: #00796b;
+  padding: 10px 20px;
+  margin: 15px 0px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.forum-button:hover {
+  background: #00796b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.forum-form-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.forum-form-container input[type="text"],
+.forum-form-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.forum-form-container textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.main-menu.home-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.7);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.signup-login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  max-width: 85%;
+  margin-bottom: 20px;
+}
+
+.form-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-login label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+}
+
+.signup-login input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+  background: #fff;
+}
+
+.signup-login input:focus {
+  border-color: #18453B;
+  box-shadow: 0 0 6px rgba(24, 69, 59, 0.4);
+}
+
+.remember-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* smaller gap between checkbox and label */
+  align-self: flex-start; /* left-align in the form */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.remember-wrapper input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #18453B;
+  margin: 0;
+}
+
+.remember-wrapper label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.forum-button {
+  flex: 1;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid #00796b;
+  color: #00796b;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.forum-button:hover {
+  background: #00796b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.approval-message {
+  color: #aa0000;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
